@@ -22,7 +22,7 @@ export default function ResearchPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/stud.jpg')",
+            backgroundImage: "url('/study.jpg')",
             backgroundColor: "rgba(0, 0, 0, 0.6)",
             backgroundBlendMode: "overlay"
           }}

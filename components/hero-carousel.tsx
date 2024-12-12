@@ -4,6 +4,7 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -15,7 +16,7 @@ const slides = [
     subtitle: "",
     description: "",
     deadline: "",
-    align: "right"
+    align: ""
   },
   {
     image: "/meet.jpg",
@@ -41,6 +42,7 @@ const quickLinks = [
   "DTS",
   "Tax Incentives",
   "Get a Refund",
+  "Investors Protection"
 ]
 
 const bottomLinks = [
@@ -51,7 +53,7 @@ const bottomLinks = [
 ]
 
 export function HeroCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
   const [selectedIndex, setSelectedIndex] = React.useState(0)
 
   const scrollPrev = React.useCallback(() => {
@@ -83,7 +85,7 @@ export function HeroCarousel() {
         <div className="flex">
           {slides.map((slide, index) => (
             <div key={index} className="relative min-w-0 flex-[0_0_100%]">
-              <div className="relative h-[600px] w-full">
+              <div className="relative h-[300px] md:h-[400px] lg:h-[500px] w-full">
                 <Image
                   src={slide.image}
                   alt=""
@@ -94,13 +96,13 @@ export function HeroCarousel() {
                 <div className="absolute inset-0 bg-black/40" />
                 <div className={cn(
                   "absolute inset-0 flex items-center px-4 text-white",
-                  slide.align === "right" ? "justify-end" : "justify-center"
+                  slide.align === "right" ? "justify-end" : "justify-start"
                 )}>
                   <div className={cn(
-                    "max-w-3xl space-y-4",
-                    slide.align === "right" ? "text-right pr-8" : "text-center"
+                    "max-w-3xl space-y-2 md:space-y-4",
+                    slide.align === "right" ? "text-right pr-8" : "text-left pl-8"
                   )}>
-                    <h2 className="text-4xl font-bold md:text-5xl text-yellow-400">
+                    <h2 className="text-2xl md:text-4xl font-bold lg:text-5xl text-yellow-400">
                       {slide.title}{" "}
                       {slide.highlight?.map((text, i) => (
                         <span key={i} className="text-yellow-400">
@@ -109,11 +111,11 @@ export function HeroCarousel() {
                       ))}
                     </h2>
                     {slide.subtitle && (
-                      <p className="text-xl md:text-2xl">{slide.subtitle}</p>
+                      <p className="text-lg md:text-xl lg:text-2xl">{slide.subtitle}</p>
                     )}
-                    <p className="text-xl md:text-2xl">{slide.description}</p>
+                    <p className="text-lg md:text-xl lg:text-2xl">{slide.description}</p>
                     {slide.deadline && (
-                      <div className="mt-8 inline-block rounded-full bg-teal-400/20 px-6 py-2 text-xl backdrop-blur-sm">
+                      <div className="mt-4 md:mt-8 inline-block rounded-full bg-teal-400/20 px-4 py-1 md:px-6 md:py-2 text-sm md:text-xl backdrop-blur-sm">
                         {slide.deadline}
                       </div>
                     )}
@@ -125,11 +127,11 @@ export function HeroCarousel() {
         </div>
       </div>
 
-      {/* Navigation Buttons */}
+      {/* Navigation Buttons (hidden on mobile) */}
       <Button
         variant="outline"
         size="icon"
-        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border-2 border-yellow-400 bg-transparent text-yellow-400 hover:bg-yellow-400 hover:text-white"
+        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border-2 border-yellow-400 bg-transparent text-yellow-400 hover:bg-yellow-400 hover:text-white hidden md:flex"
         onClick={scrollPrev}
       >
         <ChevronLeft className="h-6 w-6" />
@@ -137,21 +139,21 @@ export function HeroCarousel() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border-2 border-yellow-400 bg-transparent text-yellow-400 hover:bg-yellow-400 hover:text-white"
+        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border-2 border-yellow-400 bg-transparent text-yellow-400 hover:bg-yellow-400 hover:text-white hidden md:flex"
         onClick={scrollNext}
       >
         <ChevronRight className="h-6 w-6" />
       </Button>
 
       {/* Quick Links */}
-      <div className="absolute bottom-28 left-0 right-0 z-20">
-        <div className="w-screen ">
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-lg bg-white/80 px-4  pt-4 pb-7 backdrop-blur-sm">
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <div className="w-full">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-blue-700 px-2 py-3 md:px-4 md:py-4">
             {quickLinks.map((link) => (
               <Link
                 key={link}
                 href="#"
-                className="text-lg font-medium text-gray-700 hover:text-blue-600"
+                className="text-sm md:text-base font-medium text-white hover:text-yellow-400 transition-colors"
               >
                 {link}
               </Link>
@@ -161,20 +163,17 @@ export function HeroCarousel() {
       </div>
 
       {/* Bottom Links */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 ">
-        <div className="w-screen ">
-          <div className="mb-2 ">
-            <h3 className="text-xl font-medium text-white text-center">Investors Protection</h3>
-          </div>
-          <div className="mb-4 grid grid-cols-2 gap-4 rounded-lg bg-black/40 p-4 backdrop-blur-sm sm:grid-cols-4">
+      <div className="bg-blue-100 py-4">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {bottomLinks.map((link) => (
               <Link
                 key={link.title}
                 href="#"
-                className="flex flex-col items-center gap-2 text-center"
+                className="flex flex-col items-center gap-2 text-center p-2 bg-white rounded-lg shadow-sm hover:bg-blue-50 transition-colors"
               >
                 <svg
-                  className="h-8 w-8 text-white"
+                  className="h-6 w-6 text-blue-700"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -187,7 +186,7 @@ export function HeroCarousel() {
                     d={link.icon}
                   />
                 </svg>
-                <span className="text-sm font-medium text-white">{link.title}</span>
+                <span className="text-sm font-medium text-gray-700">{link.title}</span>
               </Link>
             ))}
           </div>
@@ -195,7 +194,7 @@ export function HeroCarousel() {
       </div>
 
       {/* Dots */}
-      <div className="absolute bottom-28 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+      <div className="absolute bottom-16 left-1/2 z-10 flex -translate-x-1/2 gap-2">
         {slides.map((_, index) => (
           <button
             key={index}

@@ -6,12 +6,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-12">
-      <Tabs defaultValue="support" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="support" className="text-lg">
+      <Tabs defaultValue="support" className="space-y-6 ">
+        <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 gap-2">
+          <TabsTrigger 
+            value="support" 
+            className="text-lg whitespace-normal h-auto px-4 py-2 data-[state=active]:bg-blue-100"
+          >
             For Support Or To Report Or Whistleblow
           </TabsTrigger>
-          <TabsTrigger value="find" className="text-lg">
+          <TabsTrigger 
+            value="find" 
+            className="text-lg whitespace-normal h-auto px-4 py-2 data-[state=active]:bg-blue-100"
+          >
             Find Us
           </TabsTrigger>
         </TabsList>
@@ -132,7 +138,7 @@ export default function ContactPage() {
           {/* Add your Find Us content here */}
           <Card className="bg-white">
             <CardContent className="pt-6">
-              <p>Location information and map will go here.</p>
+              <p>Location information Loading.</p>
             </CardContent>
           </Card>
         </TabsContent>

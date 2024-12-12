@@ -1,58 +1,37 @@
 import Image from "next/image"
-// import Link from "next/link"
-// import { ChevronLeft } from 'lucide-react'
-// import { Button } from "@/components/ui/button"
 
 export default function MediaPage() {
   return (
-    <div className="relative min-h-screen">
+    <div className="flex flex-col ">
       {/* Hero Section with Background Image */}
-      <div className="relative h-[800px] w-full">
+      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[800px]">
         <Image
           src="/media.jpg"
           alt="URA Media Center"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60">
-          {/* Back Button */}
-          {/* <div className="container mx-auto px-4 pt-6">
-            <Button
-              variant="outline"
-              size="sm"
-              className="bg-yellow-400 text-black hover:bg-yellow-500 hover:text-black"
-              asChild
-            >
-              <Link href="/">
-                <ChevronLeft className="mr-2 h-4 w-4" />
-                Back
-              </Link>
-            </Button>
-          </div> */}
-
           {/* Hero Content */}
-          <div className="container mx-auto flex h-full items-center px-4">
-            <div className="max-w-2xl space-y-4">
-              <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+          <div className="container mx-auto flex h-full items-center px-4 py-8">
+            <div className="max-w-2xl space-y-4 w-full">
+              <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
                 The URA Media Center
               </h1>
               <div className="space-y-2">
-                <p className="text-xl text-white sm:text-2xl">
+                <p className="text-lg text-white sm:text-xl md:text-2xl">
                   Welcome to the URA media center
                 </p>
-                <p className="text-lg text-white/90">
-                  Browser through all content.
+                <p className="text-base text-white/90 sm:text-lg">
+                  Browse through all content.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-     
-     
     </div>
   )
 }

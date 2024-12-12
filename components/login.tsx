@@ -17,7 +17,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-4">
+    <div className=" bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="bg-white p-8 rounded-lg shadow-sm space-y-6">
           <h1 className="text-3xl font-semibold text-center text-gray-700">
