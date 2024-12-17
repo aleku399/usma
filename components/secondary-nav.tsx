@@ -1,75 +1,60 @@
 "use client"
 
-import * as React from "react"
-import Link from "next/link"
-import { Menu } from 'lucide-react'
+import * as React from "react";
+import Link from "next/link";
+import { Menu } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 
 const navItems = {
-  "Domestic Taxes": [
-    "Get A TIN",
-    "EFRIS",
-    "Tax Incentives",
-    "Objection And Appeals",
-    "File A Return",
-    "DTS",
-    "Motor Vehicle",
-    "Stamp Duty",
-    "Make A Payment",
-    "Get A Refund",
-    "Choose A Tax Agent",
-    "Tax Clearance",
-    "Whistle Blow",
-    "Voluntary Disclosure",
+  Suppliers: [
+    "Welcome to Supplier Portal",
+    "What is supplier Portal",
+    "Validation of Registration Certificate",
+    "Complaints",
   ],
-  "Import & Export": [
-    "The Export Process",
-    "Single Customs Territory",
-    "Customs Valuation",
-    "Customs Audits And Refunds",
-    "Authorized Economic Operator",
-    "Warehousing",
-    "Customs Enforcements",
-    "Choose Customs Agent",
-  ],
-  "Legal & Policy": [
-    "Tax Laws",
-    "Regulations",
-    "Guidelines",
-    "Public Notices",
-  ],
-  "Opportunities": [
-    "Careers",
-    "Tenders",
-    "Partnerships",
-    "Programs",
-  ],
-  "Research & Publications": [
-    "Reports",
-    "Statistics",
-    "Papers",
-    "Newsletters",
-  ],
-}
+  "Bid Notices": ["Procurement Notices", "Disposal Notices", "Bid Opening"],
+  "Contracts Awarded": ["Agreements", "Agreements History"],
+  Opportunities: ["Careers", "Tenders", "Partnerships", "Programs"],
+
+};
+
+const categoryUrls: Record<keyof typeof navItems, string> = {
+  Suppliers: "/taxes",
+  "Bid Notices": "/import",
+  "Contracts Awarded": "/legal-policy",
+  Opportunities: "/opportunities",
+};
+
+const subMenuUrls: Record<string, string> = {
+  "Welcome to Supplier Portal": "/supply-welcome",
+  "What is supplier Portal": "/supply-portal",
+  "Validation of Registration Certificate": "/supply-validate",
+  "Complaints": "/supply-complaint",
+  "Procurement Notices": "/bid-notices/procurement",
+  "Disposal Notices": "/bid-notices/disposal",
+  "Bid Opening": "/bid-notices/opening",
+  "Agreements": "/contracts/agreements",
+  "Agreements History": "/contracts/history",
+  "Careers": "/opportunities/careers",
+  "Tenders": "/opportunities/tenders",
+  "Partnerships": "/opportunities/partnerships",
+  "Programs": "/opportunities/programs",
+  "Reports": "/research-publications/reports",
+  "Statistics": "/research-publications/statistics",
+  "Papers": "/research-publications/papers",
+  "Newsletters": "/research-publications/newsletters",
+};
 
 export function SecondaryNav() {
-  const [mobileMenu, setMobileMenu] = React.useState<string | null>(null)
-
-  const categoryUrls: Record<keyof typeof navItems, string> = {
-    "Domestic Taxes": "/taxes",
-    "Import & Export": "/import",
-    "Legal & Policy": "/legal-policy",
-    "Opportunities": "/opportunities",
-    "Research & Publications": "/research-publications",
-  }
+  const [mobileMenu, setMobileMenu] = React.useState<string | null>(null);
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#1e4c9a] text-white">
@@ -94,7 +79,7 @@ export function SecondaryNav() {
                         {items.map((item) => (
                           <Link
                             key={item}
-                            href="#"
+                            href={subMenuUrls[item] || "#"}
                             className="text-sm text-gray-700 hover:text-[#1e4c9a]"
                           >
                             {item}
@@ -115,7 +100,11 @@ export function SecondaryNav() {
         <h1 className="text-lg font-semibold">Developing Uganda Together</h1>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="text-white hover:bg-blue-800">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white hover:bg-blue-800"
+            >
               <Menu className="h-6 w-6" />
               <span className="sr-only">Open menu</span>
             </Button>
@@ -130,7 +119,9 @@ export function SecondaryNav() {
                   <Button
                     variant="ghost"
                     className="w-full justify-between font-medium"
-                    onClick={() => setMobileMenu(mobileMenu === category ? null : category)}
+                    onClick={() =>
+                      setMobileMenu(mobileMenu === category ? null : category)
+                    }
                   >
                     {category}
                     <svg
@@ -154,7 +145,7 @@ export function SecondaryNav() {
                       {items.map((item) => (
                         <Link
                           key={item}
-                          href="#"
+                          href={subMenuUrls[item] || "#"}
                           className="block py-2 text-sm text-muted-foreground hover:text-primary"
                         >
                           {item}
@@ -169,6 +160,5 @@ export function SecondaryNav() {
         </Sheet>
       </div>
     </nav>
-  )
+  );
 }
-

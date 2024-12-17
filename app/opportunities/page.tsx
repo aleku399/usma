@@ -41,7 +41,7 @@ export default function Opportunities() {
 
           <Card className="p-6 flex flex-col items-center text-center bg-blue-50 hover:bg-blue-100 transition-colors cursor-pointer">
             <GraduationCap className="h-6 w-6 mb-2 text-blue-800" />
-            <h2 className="font-semibold text-blue-800">URA E-Learning</h2>
+            <h2 className="font-semibold text-blue-800">USA E-Learning</h2>
           </Card>
 
           <Card className="p-6 flex flex-col items-center text-center bg-blue-50 hover:bg-blue-100 transition-colors cursor-pointer">
@@ -65,7 +65,7 @@ export default function Opportunities() {
               CAREERS, LEARNING, TENDERS, AUCTIONS
             </h2>
             <p className="text-xl text-blue-400">
-              And More at Uganda Revenue Authority
+              And More at Uganda Suppliers Authority
             </p>
           </div>
 

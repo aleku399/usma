@@ -11,37 +11,37 @@ import { cn } from "@/lib/utils"
 
 const slides = [
   {
-    image: "/waiver.png",
-    title: "",
-    subtitle: "",
-    description: "",
-    deadline: "",
-    align: ""
-  },
-  {
-    image: "/meet.jpg",
-    title: "At URA we shall serve you with",
-    highlight: ["Patriotism", "Integrity", "Professionalism"],
-    description: "at all times",
+    image: "/s2.jpg",
+    title: "Join the Uganda Suppliers Association Today",
+    subtitle: "Empowering Local Suppliers for National Growth",
+    description: "Become part of a network that connects, supports, and advocates for suppliers across Uganda.",
+    deadline: "Registration closes on 31st December 2024",
     align: "right"
   },
   {
-    image: "/efris.png",
-    title: "There are",
-    highlight: ["no lost Receipts"],
-    description: "on the EFRIS streets",
+    image: "/s3.jpg",
+    title: "Why Join the Uganda Suppliers Association?",
+    highlight: ["Networking Opportunities", "Policy Advocacy", "Capacity Building"],
+    description: "Together we build strong connections and promote growth for suppliers nationwide.",
     align: "right"
   },
-]
+  {
+    image: "/s4.jpg",
+    title: "Stay Informed and Competitive",
+    highlight: ["Access Industry Insights"],
+    description: "Gain access to valuable information, updates, and best practices to stay ahead in the supply chain sector.",
+    align: "right"
+  },
+];
 
 const quickLinks = [
-  "Make a Payment",
-  "Get a TIN",
-  "File a Return",
-  "EFRIS",
+  "PDEs",
+  "PDE Plans",
+  "Bid Notices",
+  "BEB Notices",
   "DTS",
-  "Tax Incentives",
-  "Get a Refund",
+  "Contracts Awarded",
+  "Suppliers",
   "Investors Protection"
 ]
 

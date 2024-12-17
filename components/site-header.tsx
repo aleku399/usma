@@ -1,35 +1,46 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Bell, MoreVertical, Search } from 'lucide-react'
+import * as React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Bell, MoreVertical, Search } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function SiteHeader() {
-  const [isScrolled, setIsScrolled] = React.useState(false)
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const router = useRouter();
+
+  // Check if the user is logged in on component mount
+  React.useEffect(() => {
+    const loginId = localStorage.getItem("loginId");
+    setIsLoggedIn(!!loginId);
+  }, []);
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("loginId"); // Remove loginId from localStorage
+    setIsLoggedIn(false); // Update state
+    router.push("/"); // Redirect to home page
+  };
 
   return (
     <header
@@ -41,7 +52,14 @@ export function SiteHeader() {
         <div className="flex h-16 items-center justify-between lg:justify-center">
           <div className="flex items-center gap-2 lg:absolute lg:left-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Image src="/logo.png" alt="URA Logo" width={120} height={40} priority />
+              <Image
+                src="/coat.png"
+                alt="coatOfArms"
+                width={80} /* Adjust the width */
+                height={80} /* Adjust the height */
+                className="h-auto max-h-[60px] w-auto" /* Ensures proper sizing */
+                priority
+              />
             </Link>
           </div>
 
@@ -98,9 +116,18 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center lg:absolute lg:right-4">
-            <Link href="/login" className="hidden lg:block">
-              <Button variant="default">Login</Button>
-            </Link>
+            {isLoggedIn ? (
+              <Button
+                variant="default"
+                onClick={handleLogout}
+              >
+                Logout
+              </Button>
+            ) : (
+              <Link href="/login" className="hidden lg:block">
+                <Button variant="default">Login</Button>
+              </Link>
+            )}
 
             {/* Mobile menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -112,42 +139,55 @@ export function SiteHeader() {
               </SheetTrigger>
               <SheetContent side="top" className="w-full bg-[#FFFBE6]">
                 <nav className="flex flex-col space-y-4">
-                  <Link 
-                    href="/contact" 
+                  <Link
+                    href="/contact"
                     className="text-lg font-medium text-gray-700 hover:text-gray-900"
                     onClick={() => setIsOpen(false)}
                   >
                     Contact Us
                   </Link>
-                  <Link 
-                    href="/about" 
+                  <Link
+                    href="/about"
                     className="text-lg font-medium text-gray-700 hover:text-gray-900"
                     onClick={() => setIsOpen(false)}
                   >
                     About Us
                   </Link>
-                  <Link 
-                    href="/media" 
+                  <Link
+                    href="/media"
                     className="text-lg font-medium text-gray-700 hover:text-gray-900 flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     Media Center
                     <Bell className="ml-2 h-4 w-4" />
                   </Link>
-                  <Link 
-                    href="/sitemap" 
+                  <Link
+                    href="/sitemap"
                     className="text-lg font-medium text-gray-700 hover:text-gray-900"
                     onClick={() => setIsOpen(false)}
                   >
                     Sitemap
                   </Link>
-                  <Link 
-                    href="/login" 
-                    className="text-lg font-medium text-gray-700 hover:text-gray-900"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Login
-                  </Link>
+                  {isLoggedIn ? (
+                    <Button
+                      variant="ghost"
+                      className="text-lg font-medium text-gray-700 hover:text-gray-900"
+                      onClick={() => {
+                        handleLogout();
+                        setIsOpen(false);
+                      }}
+                    >
+                      Logout
+                    </Button>
+                  ) : (
+                    <Link
+                      href="/login"
+                      className="text-lg font-medium text-gray-700 hover:text-gray-900"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Login
+                    </Link>
+                  )}
                 </nav>
               </SheetContent>
             </Sheet>
@@ -155,6 +195,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }
-

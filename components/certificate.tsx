@@ -11,25 +11,25 @@ export default function Certificate() {
         <div className="flex items-center gap-4">
           <div className="w-24 h-24 relative">
             <Image
-              src="/logo.png?height=96&width=96"
-              alt="URA Logo"
+              src="/coat.png?height=96&width=96"
+              alt="USA Logo"
               width={96}
               height={96}
               className="object-contain"
             />
           </div>
           <div className="text-sm space-y-1">
-            <p>Uganda Revenue Authority</p>
-            <p className="text-muted-foreground">DEVELOPING UGANDA TOGETHER</p>
+            <p>Uganda Suppliers Association</p>
+            <p className="text-muted-foreground">EMPOWERING UGANDAN SUPPLIERS</p>
           </div>
         </div>
         <div className="text-right text-sm space-y-1">
-          <p>For General Tax Questions</p>
+          <p>For General Inquiries</p>
           <p>call our Toll Free</p>
-          <p className="font-bold">0800117000</p>
-          <p>Or log onto URA web portal</p>
-          <a href="http://ura.go.ug" className="text-primary hover:underline">
-            http://ura.go.ug
+          <p className="font-bold">0800123456</p>
+          <p>Or visit our website</p>
+          <a href="http://usa.go.ug" className="text-primary hover:underline">
+            http://usa.go.ug
           </a>
         </div>
       </div>
@@ -40,22 +40,28 @@ export default function Certificate() {
           Certificate of Registration
         </h1>
         <div className="flex justify-end gap-2 text-sm">
-          <span>Notice DT-1112</span>
-          <span>Notice Date: 22/04/2016</span>
+          <span>Certificate No: USA-2024-001</span>
+          <span>Issue Date: 17/12/2024</span>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="space-y-6">
         <p className="text-center">
-          This is to certify that taxpayer shown herein has been registered with
-          Uganda Revenue Authority
+          This is to certify that the supplier shown herein has been registered with
+          the Uganda Suppliers Association
         </p>
 
         {/* Section A */}
         <div className="space-y-4">
-          <h2 className="font-semibold">Section A : Taxpayer Information</h2>
+          <h2 className="font-semibold">Section A : Supplier Information</h2>
           <div className="grid grid-cols-2 gap-4 border rounded-lg p-4">
+            <div>
+              <p className="text-sm text-muted-foreground">
+                URSB Certificate of Registration Number
+              </p>
+              <p className="font-medium">URSB-2024-123456</p>
+            </div>
             <div>
               <p className="text-sm text-muted-foreground">
                 Taxpayer Identification Number
@@ -64,8 +70,18 @@ export default function Certificate() {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">
-                Taxpayer Legal Name
+                Business Registration Number
               </p>
+              <p className="font-medium">BRN-2024-789012</p>
+            </div>
+            <div>
+              <p className="text-sm text-muted-foreground">
+                Trading License / Business Operating License
+              </p>
+              <p className="font-medium">TL-2024-345678</p>
+            </div>
+            <div>
+              <p className="text-sm text-muted-foreground">Supplier Legal Name</p>
               <p className="font-medium">UNI OASIS ESTATES LIMITED</p>
             </div>
             <div>
@@ -129,29 +145,23 @@ export default function Certificate() {
               <thead className="bg-muted">
                 <tr>
                   <th className="p-2 text-left">S.N</th>
-                  <th className="p-2 text-left">Tax Type Registered for</th>
+                  <th className="p-2 text-left">Registration Type</th>
                   <th className="p-2 text-left">Effective Date of Registration</th>
-                  <th className="p-2 text-left">Effective Date of Cancellation</th>
+                  <th className="p-2 text-left">Expiry Date</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t">
                   <td className="p-2">1</td>
-                  <td className="p-2">TIN Non Individual</td>
-                  <td className="p-2">22/04/2016</td>
-                  <td className="p-2"></td>
+                  <td className="p-2">USA Membership</td>
+                  <td className="p-2">17/12/2024</td>
+                  <td className="p-2">16/12/2025</td>
                 </tr>
                 <tr className="border-t">
                   <td className="p-2">2</td>
-                  <td className="p-2">PAYE</td>
-                  <td className="p-2">01/05/2016</td>
-                  <td className="p-2"></td>
-                </tr>
-                <tr className="border-t">
-                  <td className="p-2">3</td>
-                  <td className="p-2">Stamp Duty</td>
-                  <td className="p-2">22/04/2016</td>
-                  <td className="p-2"></td>
+                  <td className="p-2">Supplier Category A</td>
+                  <td className="p-2">17/12/2024</td>
+                  <td className="p-2">16/12/2025</td>
                 </tr>
               </tbody>
             </table>
@@ -161,40 +171,38 @@ export default function Certificate() {
         {/* Footer */}
         <div className="space-y-4 text-sm">
           <p>
-            The above TIN must appear on all your tax invoices and correspondences
-            with Uganda Revenue Authority.
+            The above registration details must appear on all your supplier documents and correspondences
+            with Uganda Suppliers Association.
           </p>
           <p>
-            Your accounting date is 30 June as per Sec 39(1) of The Income Tax Act,
-            Cap 340 unless a change has been approved by the Commissioner General.
-            This Certificate shall remain in force until it is cancelled.
+            This Certificate shall remain in force until its expiry date or until it is cancelled by the Association.
+            Renewal must be completed before the expiry date to maintain active status.
           </p>
         </div>
 
         {/* Official Representative */}
         <div className="space-y-4">
           <h2 className="font-semibold">
-            Section D - Official URA Representative
+            Section E - Official USA Representative
           </h2>
           <div className="grid grid-cols-2 gap-4 border rounded-lg p-4">
             <div>
               <p className="text-sm text-muted-foreground">
                 Printed Name of Signatory
               </p>
-              <p className="font-medium">Jenipher Mukyala</p>
+              <p className="font-medium">John Doe</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">
                 Designation of Signatory
               </p>
-              <p className="font-medium">Officers Grade 1</p>
+              <p className="font-medium">Certification Officer</p>
             </div>
           </div>
         </div>
 
         <div className="text-center text-sm text-muted-foreground">
-          Plot 17-21, Old Kampala, Next To Gaddaffi Mosque, KAMPALA, KAMPALA
-          SOUTH, Uganda.
+          Plot 30-35, Kampala Road, KAMPALA, KAMPALA CENTRAL, Uganda.
         </div>
       </div>
     </Card>

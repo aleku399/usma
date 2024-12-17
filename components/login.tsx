@@ -11,16 +11,28 @@ import { Captcha } from "./captcha"
 
 export default function LoginPage() {
   const [useVirtualKeyboard, setUseVirtualKeyboard] = useState(false)
+  const [loginId, setLoginId] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
   const router = useRouter()
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    // Add your login logic here
-    router.push('/certificate')
+
+    // Temporary login validation
+    if (loginId === "admin" && password === "admin") {
+      // Store loginId in local storage
+      localStorage.setItem("loginId", loginId)
+      
+      // Navigate to the certificate page
+      router.push('/certificate')
+    } else {
+      setError("Invalid login credentials. Please try again.")
+    }
   }
 
   return (
-    <div className=" bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-4">
+    <div className="bg-gradient-to-b from-blue-50 to-white flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="bg-white p-8 rounded-lg shadow-sm space-y-6">
           <h1 className="text-3xl font-semibold text-center text-gray-700">
@@ -28,11 +40,19 @@ export default function LoginPage() {
           </h1>
 
           <form onSubmit={handleSubmit} className="space-y-4">
+            {error && (
+              <div className="text-red-500 text-sm text-center">
+                {error}
+              </div>
+            )}
+
             <div className="space-y-2">
               <Label htmlFor="loginId">Login Id</Label>
               <Input 
                 id="loginId"
-                type="text" 
+                type="text"
+                value={loginId}
+                onChange={(e) => setLoginId(e.target.value)}
                 required
               />
             </div>
@@ -41,7 +61,9 @@ export default function LoginPage() {
               <Label htmlFor="password">Password</Label>
               <Input 
                 id="password"
-                type="password" 
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
@@ -89,4 +111,3 @@ export default function LoginPage() {
     </div>
   )
 }
-

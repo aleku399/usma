@@ -20,15 +20,15 @@ export function SiteFooter() {
                   Click here for HELP/SUPPORT
                 </Link>
               </p>
-              <p>Report Tax Evasion: +256 (0)323442055</p>
-              <p>Email: services@ura.go.ug</p>
+              <p>Report Fraud: +256 (0)323442055</p>
+              <p>Email: services@usa.go.ug</p>
               <p>WhatsApp: 0772140000</p>
               <div>
                 <p className="mb-2">Headquarters Address:</p>
                 <Link href="#" className="text-blue-600 hover:underline">
-                  Uganda Revenue Authority Headquarters,
+                  Uganda Suppliers Authority Headquarters,
                   <br />
-                  Plot M193/M194, Nakawa Industrial Area
+                  Plot 9 Golf Course Road, Kololo
                   <br />
                   P. O. Box 7279, Kampala
                 </Link>
@@ -131,9 +131,9 @@ export function SiteFooter() {
               "Disclaimer Notice",
               "Feedback",
               "My Bookmarks",
-              "Taxpayer Obligations",
-              "Taxpayers Rights",
-              "Ask URA App",
+              "Suppliers Obligations",
+              "Suppliers Rights",
+              "Ask USA App",
               "Forum",
             ].map((item) => (
               <Link key={item} href="#" className="hover:text-blue-600">
@@ -142,7 +142,7 @@ export function SiteFooter() {
             ))}
           </nav>
           <p className="mt-8 text-center text-sm text-gray-600">
-            ©2024 - Uganda Revenue Authority (URA)
+            ©2024 - Uganda Suppliers Authority (USA)
           </p>
         </div>
       </div>

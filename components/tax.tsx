@@ -36,8 +36,8 @@ export default function TaxPage() {
       {/* Hero Section */}
       <div className="relative h-[600px] w-full">
         <Image
-          src="/tax.jpg"
-          alt="Tax Services"
+          src="/s1.jpg"
+          alt="Suppliers"
           fill
           className="object-cover"
           priority
@@ -50,7 +50,7 @@ export default function TaxPage() {
           {/* Hero Content */}
           <div className="container mx-auto flex h-full items-center px-4">
             <h1 className="text-4xl font-bold text-yellow-400 sm:text-5xl md:text-6xl">
-              Domestic Taxes
+              Suppliers Guide Assistant
             </h1>
           </div>
         </div>
