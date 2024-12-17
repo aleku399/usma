@@ -43,8 +43,8 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-blue-600" />
                     <div className="space-y-1">
                       <p className="font-medium">Email</p>
-                      <a href="mailto:services@ura.go.ug" className="text-blue-600 hover:underline">
-                        services@ura.go.ug
+                      <a href="mailto:services@unsd.go.ug" className="text-blue-600 hover:underline">
+                        services@unsd.go.ug
                       </a>
                     </div>
                   </div>
@@ -62,7 +62,7 @@ export default function ContactPage() {
                     <div className="space-y-1">
                       <p className="font-medium">Twitter</p>
                       <Link href="https://twitter.com/URUganda" className="text-blue-600 hover:underline">
-                        @URUganda
+                        @UNSDganda
                       </Link>
                     </div>
                   </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                     <div className="space-y-1">
                       <p className="font-medium">Facebook</p>
                       <Link href="https://facebook.com/URApge" className="text-blue-600 hover:underline">
-                        @URApge
+                        @UNSDpge
                       </Link>
                     </div>
                   </div>

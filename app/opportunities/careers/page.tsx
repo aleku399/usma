@@ -19,15 +19,15 @@ export default function CareersPage() {
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-6">Careers at USA</h1>
+      <h1 className="text-4xl font-bold mb-6">Careers at UNSD</h1>
       
       <div className="space-y-6">
         <p className="text-lg leading-relaxed">
-          Uganda Suppliers Authority (USA) is proud to associate with a vibrant and shared culture of being a Client Focused and Responsive organization that Attracts and Nurtures Talent and Innovation to deliver a great Client experience in an Enjoyable Environment.
+          Uganda Suppliers Authority (UNSD) is proud to associate with a vibrant and shared culture of being a Client Focused and Responsive organization that Attracts and Nurtures Talent and Innovation to deliver a great Client experience in an Enjoyable Environment.
         </p>
         
         <p className="text-lg leading-relaxed mb-8">
-          Our foremost strategic focus is to establish USA as the employer of choice, capable of drawing in, inspiring, and maintaining a dedicated workforce. We are steered by the following goals;
+          Our foremost strategic focus is to establish UNSD as the employer of choice, capable of drawing in, inspiring, and maintaining a dedicated workforce. We are steered by the following goals;
         </p>
 
         {/* Employee Proposition Section */}
@@ -79,7 +79,7 @@ export default function CareersPage() {
               <div className="p-4 space-y-4">
                 <PropositionItem
                   title="Equal Employment Opportunity"
-                  description="USA's commitment to equal employment opportunity demonstrates a commitment to fairness and diversity. This approach ensures that all qualified individuals have an equal chance to join the organization, regardless of their background."
+                  description="UNSD's commitment to equal employment opportunity demonstrates a commitment to fairness and diversity. This approach ensures that all qualified individuals have an equal chance to join the organization, regardless of their background."
                 />
                 <PropositionItem
                   title="Transparent Screening Process"

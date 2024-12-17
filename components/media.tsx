@@ -18,11 +18,11 @@ export default function MediaPage() {
           <div className="container mx-auto flex h-full items-center px-4 py-8">
             <div className="max-w-2xl space-y-4 w-full">
               <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                The URA Media Center
+                The UNSD Media Center
               </h1>
               <div className="space-y-2">
                 <p className="text-lg text-white sm:text-xl md:text-2xl">
-                  Welcome to the URA media center
+                  Welcome to the UNSD media center
                 </p>
                 <p className="text-base text-white/90 sm:text-lg">
                   Browse through all content.

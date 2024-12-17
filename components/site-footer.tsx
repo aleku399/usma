@@ -21,12 +21,12 @@ export function SiteFooter() {
                 </Link>
               </p>
               <p>Report Fraud: +256 (0)323442055</p>
-              <p>Email: services@usa.go.ug</p>
+              <p>Email: services@unsd.go.ug</p>
               <p>WhatsApp: 0772140000</p>
               <div>
                 <p className="mb-2">Headquarters Address:</p>
                 <Link href="#" className="text-blue-600 hover:underline">
-                  Uganda Suppliers Authority Headquarters,
+                  Uganda National Suppliers Database Headquarters,
                   <br />
                   Plot 9 Golf Course Road, Kololo
                   <br />
@@ -133,7 +133,7 @@ export function SiteFooter() {
               "My Bookmarks",
               "Suppliers Obligations",
               "Suppliers Rights",
-              "Ask USA App",
+              "Ask UNSD App",
               "Forum",
             ].map((item) => (
               <Link key={item} href="#" className="hover:text-blue-600">
@@ -142,7 +142,7 @@ export function SiteFooter() {
             ))}
           </nav>
           <p className="mt-8 text-center text-sm text-gray-600">
-            ©2024 - Uganda Suppliers Authority (USA)
+            ©2024 - Uganda National Suppliers Database (UNSD)
           </p>
         </div>
       </div>

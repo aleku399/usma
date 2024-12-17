@@ -24,7 +24,7 @@ export default function TendersPage() {
         </p>
         
         <p>
-          By using the online system, USA purchases goods, works, services and non-consultancy services to help ensure efficiency of public procurement with the standardization of electronic documents, supplier registration, goods and services information and to streamline procurement transactions for efficient service delivery.
+          By using the online system, UNSD purchases goods, works, services and non-consultancy services to help ensure efficiency of public procurement with the standardization of electronic documents, supplier registration, goods and services information and to streamline procurement transactions for efficient service delivery.
         </p>
         
         <p>

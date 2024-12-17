@@ -12,16 +12,16 @@ import { cn } from "@/lib/utils"
 const slides = [
   {
     image: "/s2.jpg",
-    title: "Join the Uganda Suppliers Association Today",
-    subtitle: "Empowering Local Suppliers for National Growth",
+    title: "Join the Uganda National Suppliers Database Today",
+    subtitle: "",
     description: "Become part of a network that connects, supports, and advocates for suppliers across Uganda.",
     deadline: "Registration closes on 31st December 2024",
     align: "right"
   },
   {
     image: "/s3.jpg",
-    title: "Why Join the Uganda Suppliers Association?",
-    highlight: ["Networking Opportunities", "Policy Advocacy", "Capacity Building"],
+    title: "Why Join the Uganda National Suppliers Database ?",
+    highlight: [""],
     description: "Together we build strong connections and promote growth for suppliers nationwide.",
     align: "right"
   },
@@ -46,8 +46,8 @@ const quickLinks = [
 ]
 
 const bottomLinks = [
-  { title: "Choose a Tax Agent", icon: "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2zM9 7h6m-6 4h6m-6 4h6" },
-  { title: "Compute Tax", icon: "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm4 12h8m-8-4h8M8 8h8" },
+  { title: "Choose an UNSD", icon: "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2zM9 7h6m-6 4h6m-6 4h6" },
+  { title: "Compute Fee", icon: "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm4 12h8m-8-4h8M8 8h8" },
   { title: "Whistle Blow", icon: "M15.5 9.5l-3-3m3 3l3-3m-3 3V4M4 21h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4L9 1H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z" },
   { title: "Exchange Rates", icon: "M12 21v-2m0-4v2m0-10V5m0 4V7m8 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0z" },
 ]

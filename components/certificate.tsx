@@ -19,7 +19,7 @@ export default function Certificate() {
             />
           </div>
           <div className="text-sm space-y-1">
-            <p>Uganda Suppliers Association</p>
+            <p>Uganda National Suppliers Database</p>
             <p className="text-muted-foreground">EMPOWERING UGANDAN SUPPLIERS</p>
           </div>
         </div>
@@ -28,8 +28,8 @@ export default function Certificate() {
           <p>call our Toll Free</p>
           <p className="font-bold">0800123456</p>
           <p>Or visit our website</p>
-          <a href="http://usa.go.ug" className="text-primary hover:underline">
-            http://usa.go.ug
+          <a href="http://UNSD.go.ug" className="text-primary hover:underline">
+            http://UNSD.go.ug
           </a>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function Certificate() {
           Certificate of Registration
         </h1>
         <div className="flex justify-end gap-2 text-sm">
-          <span>Certificate No: USA-2024-001</span>
+          <span>Certificate No: UNSD-2024-001</span>
           <span>Issue Date: 17/12/2024</span>
         </div>
       </div>
@@ -153,7 +153,7 @@ export default function Certificate() {
               <tbody>
                 <tr className="border-t">
                   <td className="p-2">1</td>
-                  <td className="p-2">USA Membership</td>
+                  <td className="p-2">UNSD Membership</td>
                   <td className="p-2">17/12/2024</td>
                   <td className="p-2">16/12/2025</td>
                 </tr>
@@ -183,7 +183,7 @@ export default function Certificate() {
         {/* Official Representative */}
         <div className="space-y-4">
           <h2 className="font-semibold">
-            Section E - Official USA Representative
+            Section E - Official UNSD Representative
           </h2>
           <div className="grid grid-cols-2 gap-4 border rounded-lg p-4">
             <div>
