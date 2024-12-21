@@ -1,9 +1,75 @@
 'use client'
+import { useEffect, useState } from "react";
 
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
 
+type Certificate = {
+  regNumber: string;
+  tin: string;
+  certificateRegNumber: string;
+  tradingLicense: string;
+  supplierLegalName: string;
+  businessName: string;
+  plotNumber: string;
+  streetName: string;
+  buildingName: string;
+  tradingCenter: string;
+  city: string;
+  county: string;
+  businessActivity: string;
+  regType: string;
+  dateReg: string;
+  expiryDate: string;
+  regType1: string;
+  dateReg1: string;
+  expiryDate1: string;
+  nameSignatory: string;
+  designationSign: string;
+  certificateNumber: string;
+  issueDate: string;
+};
+
 export default function Certificate() {
+  const [certificate, setCertificate] = useState<Certificate | null>(null);
+
+  useEffect(() => {
+    // Retrieve certificate data from localStorage
+    const storedCertificate = localStorage.getItem("certificate");
+    if (storedCertificate) {
+      const parsedCertificate = JSON.parse(storedCertificate);
+      setCertificate({
+        regNumber: parsedCertificate.regNumber,
+        tin: parsedCertificate.tin,
+        certificateRegNumber: parsedCertificate.certificateRegNumber,
+        tradingLicense: parsedCertificate.tradingLicense,
+        supplierLegalName: parsedCertificate.supplierLegalName,
+        businessName: parsedCertificate.businessName,
+        plotNumber: parsedCertificate.plotNumber,
+        streetName: parsedCertificate.streetName,
+        buildingName: parsedCertificate.buildingName,
+        tradingCenter: parsedCertificate.tradingCenter,
+        city: parsedCertificate.city,
+        county: parsedCertificate.county,
+        businessActivity: parsedCertificate.businessActivity,
+        regType: parsedCertificate.regType,
+        dateReg: parsedCertificate.dateReg,
+        expiryDate: parsedCertificate.expiryDate,
+        regType1: parsedCertificate.regType1,
+        dateReg1: parsedCertificate.dateReg1,
+        expiryDate1: parsedCertificate.expiryDate1,
+        nameSignatory: parsedCertificate.nameSignatory,
+        designationSign: parsedCertificate.designationSign,
+        certificateNumber: parsedCertificate.certificateNumber,
+        issueDate: parsedCertificate.issueDate
+      });
+    }
+  }, []);
+
+  if (!certificate) {
+    return <div>Loading certificate details...</div>;
+  }
+  
   return (
     <Card className="max-w-4xl mx-auto p-8 my-3 space-y-6">
       {/* Header */}
@@ -40,8 +106,8 @@ export default function Certificate() {
           Certificate of Registration
         </h1>
         <div className="flex justify-end gap-2 text-sm">
-          <span>Certificate No: UNSD-2024-001</span>
-          <span>Issue Date: 17/12/2024</span>
+          <span>Certificate No: {certificate.certificateNumber}</span>
+          <span>Issue Date: {certificate.issueDate}</span>
         </div>
       </div>
 
@@ -60,33 +126,33 @@ export default function Certificate() {
               <p className="text-sm text-muted-foreground">
                 URSB Certificate of Registration Number
               </p>
-              <p className="font-medium">URSB-2024-123456</p>
+              <p className="font-medium">{certificate.regNumber}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">
                 Taxpayer Identification Number
               </p>
-              <p className="font-medium">1008904187</p>
+              <p className="font-medium">{certificate.tin}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">
                 Business Registration Number
               </p>
-              <p className="font-medium">BRN-2024-789012</p>
+              <p className="font-medium">{certificate.certificateRegNumber}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">
                 Trading License / Business Operating License
               </p>
-              <p className="font-medium">TL-2024-345678</p>
+              <p className="font-medium">{certificate.tradingLicense}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Supplier Legal Name</p>
-              <p className="font-medium">UNI OASIS ESTATES LIMITED</p>
+              <p className="font-medium">{certificate.supplierLegalName}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Business Name</p>
-              <p className="font-medium">UNI OASIS LIMITED</p>
+              <p className="font-medium">{certificate.businessName}</p>
             </div>
           </div>
         </div>
@@ -100,29 +166,29 @@ export default function Certificate() {
           <div className="grid grid-cols-3 gap-4 border rounded-lg p-4">
             <div>
               <p className="text-sm text-muted-foreground">1) Plot Number</p>
-              <p className="font-medium">PLOT 214</p>
+              <p className="font-medium">{certificate.plotNumber}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">2) Street Name</p>
-              <p className="font-medium">BLOCK 9</p>
+              <p className="font-medium">{certificate.streetName}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">3) Building Name</p>
-              <p className="font-medium">OASIS ESTATE</p>
+              <p className="font-medium">{certificate.buildingName}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">4) Trading Center</p>
-              <p className="font-medium">KIGUMBA</p>
+              <p className="font-medium">{certificate.tradingCenter}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">5) District/City</p>
-              <p className="font-medium">KIRYANDONGO</p>
+              <p className="font-medium">{certificate.city}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">
                 6) County/Municipality
               </p>
-              <p className="font-medium">KIBANDA</p>
+              <p className="font-medium">{certificate.county}</p>
             </div>
           </div>
         </div>
@@ -133,7 +199,7 @@ export default function Certificate() {
             Section C : Nature of Business Activity
           </h2>
           <div className="border rounded-lg p-4">
-            <p className="font-medium">Real estate activities</p>
+            <p className="font-medium">{certificate.businessActivity}</p>
           </div>
         </div>
 
@@ -153,15 +219,15 @@ export default function Certificate() {
               <tbody>
                 <tr className="border-t">
                   <td className="p-2">1</td>
-                  <td className="p-2">UNSD Membership</td>
-                  <td className="p-2">17/12/2024</td>
-                  <td className="p-2">16/12/2025</td>
+                  <td className="p-2">{certificate.regType}</td>
+                  <td className="p-2">{certificate.dateReg}</td>
+                  <td className="p-2">{certificate.expiryDate}</td>
                 </tr>
                 <tr className="border-t">
                   <td className="p-2">2</td>
-                  <td className="p-2">Supplier Category A</td>
-                  <td className="p-2">17/12/2024</td>
-                  <td className="p-2">16/12/2025</td>
+                  <td className="p-2">{certificate.regType1}</td>
+                  <td className="p-2">{certificate.dateReg1}</td>
+                  <td className="p-2">{certificate.expiryDate1}</td>
                 </tr>
               </tbody>
             </table>
@@ -190,13 +256,13 @@ export default function Certificate() {
               <p className="text-sm text-muted-foreground">
                 Printed Name of Signatory
               </p>
-              <p className="font-medium">John Doe</p>
+              <p className="font-medium">{certificate.nameSignatory}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">
                 Designation of Signatory
               </p>
-              <p className="font-medium">Certification Officer</p>
+              <p className="font-medium">{certificate.designationSign}</p>
             </div>
           </div>
         </div>

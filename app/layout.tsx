@@ -6,6 +6,8 @@ import { SiteHeader } from "@/components/site-header"
 import { SecondaryNav } from "@/components/secondary-nav"
 import { SiteFooter  } from "@/components/site-footer"
 
+import { AuthProvider } from "@/context/auth-context";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,11 +34,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SiteHeader />
-        <SecondaryNav />
-        
-        {children}
-        <SiteFooter />
+         <AuthProvider>
+          <SiteHeader />
+          <SecondaryNav />
+          
+            {children}
+          <SiteFooter />
+
+         </AuthProvider>
+     
       </body>
     </html>
   );

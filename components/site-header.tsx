@@ -15,18 +15,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useAuth } from "@/context/auth-context";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const router = useRouter();
+  const { isLoggedIn, logout } = useAuth();
 
-  // Check if the user is logged in on component mount
-  React.useEffect(() => {
-    const loginId = localStorage.getItem("loginId");
-    setIsLoggedIn(!!loginId);
-  }, []);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +33,7 @@ export function SiteHeader() {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("loginId"); // Remove loginId from localStorage
-    setIsLoggedIn(false); // Update state
+    logout();
     router.push("/"); // Redirect to home page
   };
 
@@ -73,16 +68,6 @@ export function SiteHeader() {
               />
             </form>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost">FAQs</Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>General FAQs</DropdownMenuItem>
-                <DropdownMenuItem>Tax FAQs</DropdownMenuItem>
-                <DropdownMenuItem>Support FAQs</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -110,9 +95,7 @@ export function SiteHeader() {
               </Button>
             </Link>
 
-            <Link href="/sitemap">
-              <Button variant="ghost">Sitemap</Button>
-            </Link>
+         
           </nav>
 
           <div className="flex items-center lg:absolute lg:right-4">

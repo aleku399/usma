@@ -27,7 +27,7 @@ const navItems = {
 };
 
 const categoryUrls: Record<keyof typeof navItems, string> = {
-  Suppliers: "/taxes",
+  Suppliers: "/supply-welcome",
   "Bid Notices": "/import",
   "Contracts Awarded": "/legal-policy",
   Opportunities: "/opportunities",

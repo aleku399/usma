@@ -9,23 +9,40 @@ import { Checkbox } from "@/components/ui/checkbox"
 import Link from "next/link"
 import { Captcha } from "./captcha"
 
+import { loginClient, fetchUserCertificate } from "@/api/"
+import { useAuth } from "@/context/auth-context";
+
 export default function LoginPage() {
   const [useVirtualKeyboard, setUseVirtualKeyboard] = useState(false)
   const [loginId, setLoginId] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const router = useRouter()
+  const { login } = useAuth();
+  
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
 
-    // Temporary login validation
-    if (loginId === "admin" && password === "admin") {
-      // Store loginId in local storage
-      localStorage.setItem("loginId", loginId)
+    const client = await loginClient(loginId, password)
+
+    console.log("client", client);
+
+    if (client) {
+
+
+      login(client.loginId);
+
+
+      const certificateResponse = await fetchUserCertificate(loginId);
+
+      if (certificateResponse && certificateResponse.data) {
+        console.log("certificateResponse.data[0]", certificateResponse.data[0]);
+        localStorage.setItem("certificate", JSON.stringify(certificateResponse.data[0]));
+        router.push("/certificate");
+      }
       
-      // Navigate to the certificate page
-      router.push('/certificate')
+    
     } else {
       setError("Invalid login credentials. Please try again.")
     }
