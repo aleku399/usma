@@ -1,7 +1,11 @@
+"use client"
+
 import Link from "next/link"
 import { Phone, Mail, Globe, Twitter, Facebook, MessageSquare } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+import Map from "./map"
 
 export default function ContactPage() {
   return (
@@ -118,7 +122,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-2">
                     <Phone className="h-5 w-5 text-blue-600" />
                     <div className="space-y-1">
-                      <p className="font-medium">Tax Evasion</p>
+                      <p className="font-medium">UNSD Registration</p>
                       <p className="text-blue-600">0323442055</p>
                     </div>
                   </div>
@@ -138,7 +142,8 @@ export default function ContactPage() {
           {/* Add your Find Us content here */}
           <Card className="bg-white">
             <CardContent className="pt-6">
-              <p>Location information Loading.</p>
+              <p className="mb-4">We are located in Kololo, Kampala. You can find us on the map below:</p>
+              <Map />
             </CardContent>
           </Card>
         </TabsContent>

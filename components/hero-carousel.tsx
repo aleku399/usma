@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 
 const slides = [
   {
-    image: "/s2.jpg",
+    image: "/legal.jpg",
     title: "Join the Uganda National Suppliers Database Today",
     subtitle: "",
     description: "Become part of a network that connects, supports, and advocates for suppliers across Uganda.",
@@ -53,7 +53,8 @@ const bottomLinks = [
 ]
 
 export function HeroCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  const autoplay = React.useRef(Autoplay({ delay: 3000 })) // Autoplay with a 3-second delay
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current])
   const [selectedIndex, setSelectedIndex] = React.useState(0)
 
   const scrollPrev = React.useCallback(() => {
@@ -72,11 +73,12 @@ export function HeroCarousel() {
   React.useEffect(() => {
     if (!emblaApi) return
     onSelect()
-    emblaApi.on('select', onSelect)
+    emblaApi.on("select", onSelect)
     return () => {
-      emblaApi.off('select', onSelect)
+      emblaApi.off("select", onSelect)
     }
   }, [emblaApi, onSelect])
+
 
   return (
     <div className="relative">
