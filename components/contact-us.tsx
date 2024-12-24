@@ -1,11 +1,12 @@
 "use client"
 
 import Link from "next/link"
+import dynamic from "next/dynamic";
 import { Phone, Mail, Globe, Twitter, Facebook, MessageSquare } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-import Map from "./map"
+const Map = dynamic(() => import("./map"), { ssr: false });
 
 export default function ContactPage() {
   return (
