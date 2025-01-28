@@ -7,12 +7,6 @@ import { useRouter } from "next/navigation";
 import { Bell, MoreVertical, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useAuth } from "@/context/auth-context";
@@ -69,16 +63,7 @@ export function SiteHeader() {
             </form>
 
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost">Select Language</Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>English</DropdownMenuItem>
-                <DropdownMenuItem>Swahili</DropdownMenuItem>
-                <DropdownMenuItem>Luganda</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+          
 
             <Link href="/contact">
               <Button variant="ghost">Contact Us</Button>

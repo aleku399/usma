@@ -13,14 +13,14 @@ export function SiteFooter() {
           <div>
             <h3 className="mb-6 text-xl font-semibold text-gray-900">Contact Us</h3>
             <div className="space-y-3 text-gray-600">
-              <p>Toll Free: 0800 117 000 / 0800 217 000</p>
+              <p>Toll Free: 0800 115 000 / 0800 213 000</p>
               <p>
                 Help:{" "}
                 <Link href="#" className="text-blue-600 hover:underline">
                   Click here for HELP/SUPPORT
                 </Link>
               </p>
-              <p>Report Fraud: +256 (0)323442055</p>
+              <p>Report Fraud: +256 (0)323452055</p>
               <p>Email: services@unsd.go.ug</p>
               <p>WhatsApp: 0772140000</p>
               <div>
@@ -28,9 +28,9 @@ export function SiteFooter() {
                 <Link href="#" className="text-blue-600 hover:underline">
                   Uganda National Suppliers Database Headquarters,
                   <br />
-                  Plot 9 Golf Course Road, Kololo
+                  Plot 102 Nakasero, Kampala
                   <br />
-                  P. O. Box 7279, Kampala
+                  P. O. Box 7369, Kampala
                 </Link>
               </div>
             </div>

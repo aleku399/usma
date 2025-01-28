@@ -15,7 +15,7 @@ const slides = [
     title: "Join the Uganda National Suppliers Database Today",
     subtitle: "",
     description: "Become part of a network that connects, supports, and advocates for suppliers across Uganda.",
-    deadline: "Registration closes on 31st December 2024",
+    deadline: "Registration closes on 31st December 2025",
     align: "right"
   },
   {
@@ -26,7 +26,7 @@ const slides = [
     align: "right"
   },
   {
-    image: "/s4.jpg",
+    image: "/study.jpg",
     title: "Stay Informed and Competitive",
     highlight: ["Access Industry Insights"],
     description: "Gain access to valuable information, updates, and best practices to stay ahead in the supply chain sector.",
