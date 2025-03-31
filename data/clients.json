@@ -6,6 +6,22 @@
       "name": "Solly Beds",
       "route": "/documents",
       "role": "client"
+    },
+    {
+      "id": "lanner",
+      "loginId": "lanmer",
+      "password": "lanmer2024",
+      "name": "Lanmer",
+      "route": "/lanner",
+      "role": "client"
+    },
+    {
+      "id": "ag_drone",
+      "loginId": "agdrone",
+      "password": "agdrone2024",
+      "name": "Ag Drone",
+      "route": "/ag-drone",
+      "role": "client"
     }
   ]
   
