@@ -83,7 +83,7 @@ const documents = [
   {
     id: 9,
     title: "Force Majeure",
-    url: "/solly9.jpeg",
+    url: "/solly6.jpeg",
     pageNumber: 9,
     category: "contract",
   },
