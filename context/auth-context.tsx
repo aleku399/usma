@@ -6,12 +6,14 @@ interface AuthContextProps {
   isLoggedIn: boolean;
   login: (loginId: string) => void;
   logout: () => void;
+  clientId: string | null;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [clientId, setClientId] = useState<string | null>(null);
 
   useEffect(() => {
     const loginId = localStorage.getItem('loginId');
@@ -25,8 +27,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         localStorage.removeItem('loginId');
         localStorage.removeItem('loginTime');
         setIsLoggedIn(false);
+        setClientId(null);
       } else {
         setIsLoggedIn(true);
+        setClientId(loginId);
       }
     }
   }, []);
@@ -45,7 +49,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, login, logout, clientId }}>
       {children}
     </AuthContext.Provider>
   );

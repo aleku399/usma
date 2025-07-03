@@ -26,112 +26,35 @@ import ProtectedRoute from "@/components/protected-route";
 const documents = [
   {
     id: 1,
-    title: "Contract Cover Page",
-    url: "/solly.jpeg",
+    title: "Quotation - Page 1",
+    url: "/bb1.png",
     pageNumber: 1,
-    category: "contract",
+    category: "quotation",
   },
   {
     id: 2,
-    title: "Contract Parties",
-    url: "/solly1.jpeg",
+    title: "Quotation - Page 2",
+    url: "/bb2.png",
     pageNumber: 2,
-    category: "contract",
+    category: "quotation",
   },
   {
     id: 3,
-    title: "Contract Definitions",
-    url: "/solly2.jpeg",
-    pageNumber: 3,
-    category: "contract",
+    title: "Tax Compliance - Page 1",
+    url: "/bb3.png",
+    pageNumber: 1,
+    category: "tax-compliance",
   },
   {
     id: 4,
-    title: "Country of Origin & Standards",
-    url: "/solly3.jpeg",
-    pageNumber: 4,
-    category: "contract",
-  },
-  {
-    id: 5,
-    title: "Inspection and Packaging",
-    url: "/solly4.jpeg",
-    pageNumber: 5,
-    category: "contract",
-  },
-  {
-    id: 6,
-    title: "Delivery and Warranty",
-    url: "/solly5.jpeg",
-    pageNumber: 6,
-    category: "contract",
-  },
-  {
-    id: 7,
-    title: "Payment Terms",
-    url: "/solly6.jpeg",
-    pageNumber: 7,
-    category: "contract",
-  },
-  {
-    id: 8,
-    title: "Contract Amendments",
-    url: "/solly8.jpeg",
-    pageNumber: 8,
-    category: "contract",
-  },
-  {
-    id: 9,
-    title: "Force Majeure",
-    url: "/solly6.jpeg",
-    pageNumber: 9,
-    category: "contract",
-  },
-  {
-    id: 10,
-    title: "Applicable Law",
-    url: "/solly10.jpeg",
-    pageNumber: 10,
-    category: "contract",
-  },
-  {
-    id: 11,
-    title: "Contract Signatures",
-    url: "/solly11.jpeg",
-    pageNumber: 11,
-    category: "contract",
-  },
-  {
-    id: 12,
-    title: "Supplier's Banking Credentials",
-    url: "/solly12.jpeg",
-    pageNumber: 12,
-    category: "contract",
-  },
-  {
-    id: 13,
-    title: "Account Confirmation Letter",
-    url: "/solly13.jpeg",
-    pageNumber: 13,
-    category: "contract",
-  },
-  {
-    id: 14,
-    title: "ID Document - Page 1",
-    url: "/id.png", // Assuming you've saved the ID document in public folder
-    pageNumber: 14,
-    category: "identification",
-  },
-  {
-    id: 15,
-    title: "ID Document - Page 2",
-    url: "/id.png", // Assuming you've saved the ID document in public folder
-    pageNumber: 15,
-    category: "identification",
+    title: "Tax Compliance - Page 2",
+    url: "/bb4.png",
+    pageNumber: 2,
+    category: "tax-compliance",
   },
 ];
 
-export default function DocumentViewer() {
+export default function PdfViewer() {
   const [currentDocIndex, setCurrentDocIndex] = useState(0);
   const [zoomLevel, setZoomLevel] = useState(100);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -209,7 +132,6 @@ export default function DocumentViewer() {
   };
 
   const downloadAllDocuments = () => {
-    // Create a link to download a zip file (in a real app, you'd generate this on the server)
     console.log("downloading")
   };
 
@@ -217,42 +139,49 @@ export default function DocumentViewer() {
     setActiveCategory(category);
     setCurrentDocIndex(0);
   };
-
   console.log("isFullscreen", isFullscreen);
-
   return (
-    <ProtectedRoute allowedClients={["sollybeds"]}>
+    <ProtectedRoute allowedClients={["brandbaseit"]}>
       <div className="flex flex-col min-h-screen bg-gray-100">
-        {/* Contract Summary Banner */}
+        {/* Header for BrandBase IT */}
         <div className="bg-blue-600 text-white p-4">
           <div className="container mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
               <div>
-                <h1 className="text-2xl font-bold">SOLLYS BEDS (PTY) LTD</h1>
+                <h1 className="text-2xl font-bold">
+                  BrandBase IT and Printing Solution
+                </h1>
                 <p className="text-blue-100">
-                  Contract No. SCOC/SPLS/WRKS/CKVS/24-25/10/1
+                  Shop #5 Ndinaye House, 178 Francis Baard Street, Pretoria,
+                  0001
+                </p>
+                <p className="text-blue-100">
+                  Reg No: 2009/216225/23 | Income Tax No: 9993042150 | VAT No:
+                  4630268201
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <div className="flex items-center bg-blue-700 rounded-md px-3 py-2">
                   <Calendar className="h-5 w-5 mr-2" />
                   <div>
-                    <p className="text-xs text-blue-200">Contract Duration</p>
-                    <p className="font-medium">3 Years</p>
+                    <p className="text-xs text-blue-200">Contact Number</p>
+                    <p className="font-medium">
+                      Tel: 012 767 8464, 081 359 9746
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center bg-blue-700 rounded-md px-3 py-2">
                   <FileText className="h-5 w-5 mr-2" />
                   <div>
-                    <p className="text-xs text-blue-200">Contract Value</p>
-                    <p className="font-medium">USD 3,400,000</p>
+                    <p className="text-xs text-blue-200">Fax</p>
+                    <p className="font-medium">086 566 9602</p>
                   </div>
                 </div>
                 <div className="flex items-center bg-blue-700 rounded-md px-3 py-2">
                   <User className="h-5 w-5 mr-2" />
                   <div>
-                    <p className="text-xs text-blue-200">Director</p>
-                    <p className="font-medium">Abrar Ahmed Limbada</p>
+                    <p className="text-xs text-blue-200">E-mail</p>
+                    <p className="font-medium">brandbaseit@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -276,21 +205,21 @@ export default function DocumentViewer() {
                 </Button>
                 <Button
                   variant={
-                    activeCategory === "contract" ? "default" : "outline"
+                    activeCategory === "quotation" ? "default" : "outline"
                   }
                   size="sm"
-                  onClick={() => handleCategoryChange("contract")}
+                  onClick={() => handleCategoryChange("quotation")}
                 >
-                  Contract
+                  Quotation
                 </Button>
                 <Button
                   variant={
-                    activeCategory === "identification" ? "default" : "outline"
+                    activeCategory === "tax-compliance" ? "default" : "outline"
                   }
                   size="sm"
-                  onClick={() => handleCategoryChange("identification")}
+                  onClick={() => handleCategoryChange("tax-compliance")}
                 >
-                  ID Documents
+                  Tax Compliance
                 </Button>
               </div>
             </div>
@@ -318,7 +247,9 @@ export default function DocumentViewer() {
                   <div className="flex-1 min-w-0">
                     <span className="text-sm truncate block">{doc.title}</span>
                     <Badge variant="outline" className="text-xs mt-1">
-                      {doc.category === "contract" ? "Contract" : "ID"}
+                      {doc.category === "quotation"
+                        ? "Quotation"
+                        : "Tax Compliance"}
                     </Badge>
                   </div>
                 </div>
@@ -476,35 +407,13 @@ export default function DocumentViewer() {
               </h3>
               <p className="text-sm text-gray-600">
                 {currentDocument.id === 1 &&
-                  "Contract cover page between the Government of Uganda and SOLLYS BEDS (PTY) LIMITED"}
+                  "Quotation Page 1 - Details of items and pricing for Special Contracts Oversight Committee"}
                 {currentDocument.id === 2 &&
-                  "Contract parties and agreement details for the supply of goods and services"}
+                  "Quotation Page 2 - Continuation of items and total pricing for the contract"}
                 {currentDocument.id === 3 &&
-                  "Contract definitions including the supply of 60,000 units of Rest Easy 5-star Single Mattresses"}
+                  "Tax Compliance Page 1 - Tax compliance status issued by the South African Revenue Service"}
                 {currentDocument.id === 4 &&
-                  "Country of origin requirements and standards for goods supplied under the contract"}
-                {currentDocument.id === 5 &&
-                  "Inspection, testing, and packaging requirements for the goods"}
-                {currentDocument.id === 6 &&
-                  "Delivery terms, insurance requirements, and warranty information (3-year warranty)"}
-                {currentDocument.id === 7 &&
-                  "Payment terms and schedule for the contract"}
-                {currentDocument.id === 8 &&
-                  "Contract amendments and assignment clauses"}
-                {currentDocument.id === 9 &&
-                  "Force majeure and dispute resolution clauses"}
-                {currentDocument.id === 10 &&
-                  "Contract clauses regarding applicable law and notices"}
-                {currentDocument.id === 11 &&
-                  "Contract signatures from all parties"}
-                {currentDocument.id === 12 &&
-                  "Supplier's banking details for SOLLYS BEDS (PTY) LTD"}
-                {currentDocument.id === 13 &&
-                  "Official bank account confirmation letter from First National Bank"}
-                {currentDocument.id === 14 &&
-                  "ID Document for Abrar Ahmed Limbada (ID No. 720802 5893 084)"}
-                {currentDocument.id === 15 &&
-                  "Additional ID Document information and certification"}
+                  "Tax Compliance Page 2 - Additional tax compliance details and registration certificate"}
               </p>
             </div>
           </div>

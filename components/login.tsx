@@ -10,7 +10,7 @@ import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { Captcha } from "./captcha";
 
-import { loginClient, fetchUserCertificate } from "@/api/";
+import { loginClient } from "@/api/";
 import { useAuth } from "@/context/auth-context";
 
 export default function LoginPage() {
@@ -32,16 +32,9 @@ export default function LoginPage() {
 
       if (client) {
         login(client.loginId);
-
-        const certificateResponse = await fetchUserCertificate(loginId);
-
-        if (certificateResponse && certificateResponse.data) {
-          localStorage.setItem(
-            "certificate",
-            JSON.stringify(certificateResponse.data[0])
-          );
-          router.push("/certificate");
-        }
+        
+        router.push(client.route);
+  
       } else {
         setError("Invalid login credentials. Please try again.");
       }
