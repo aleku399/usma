@@ -1,12 +1,6 @@
-import { Mail, Phone, Building2, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Mail, Phone, Building2, Users } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Page() {
   return (
@@ -19,29 +13,27 @@ export default function Page() {
               <Building2 className="h-12 w-12 text-blue-600" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
-            Hycromax Zambian Enterprises Ltd
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Hycromax Zambian Enterprises Ltd</h1>
           <p className="text-lg text-gray-600 max-w-md mx-auto">
-            For detailed information about your company, please reach out to our
-            committee
+            For detailed information about your company, please reach out to our committee
           </p>
         </div>
 
         {/* Main Card */}
         <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm">
           <CardHeader className="text-center pb-6">
+            <CardTitle className="text-2xl font-semibold text-gray-900 mb-4">
+              Pending<span className="animate-pulse">...</span>
+            </CardTitle>
             <div className="flex justify-center mb-4">
               <div className="p-3 bg-orange-100 rounded-full">
                 <Users className="h-8 w-8 text-orange-600" />
               </div>
             </div>
-            <CardTitle className="text-2xl font-semibold text-gray-900">
-              Contact Our Committee
-            </CardTitle>
+            <CardTitle className="text-xl font-semibold text-gray-900">Contact Our Committee</CardTitle>
             <CardDescription className="text-base text-gray-600">
-              Our committee members are ready to provide you with comprehensive
-              details about Hycromax Zambian Enterprises Ltd.
+              Our committee members are ready to provide you with comprehensive details about Hycromax Zambian
+              Enterprises Ltd.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -69,24 +61,17 @@ export default function Page() {
 
             {/* Call to Action */}
             <div className="text-center pt-4">
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
-              >
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
                 Contact Committee Now
               </Button>
-              <p className="text-sm text-gray-500 mt-3">
-                We typically respond within 24 hours
-              </p>
+              <p className="text-sm text-gray-500 mt-3">We typically respond within 24 hours</p>
             </div>
           </CardContent>
         </Card>
 
         {/* Additional Info */}
         <div className="text-center space-y-2">
-          <p className="text-sm text-gray-500">
-            Hycromax Zambian Enterprises Ltd - Committed to Excellence
-          </p>
+          <p className="text-sm text-gray-500">Hycromax Zambian Enterprises Ltd - Committed to Excellence</p>
           <div className="flex justify-center space-x-2 text-xs text-gray-400">
             <span>Zambia</span>
             <span>•</span>
@@ -97,5 +82,5 @@ export default function Page() {
         </div>
       </div>
     </div>
-  );
+  )
 }
