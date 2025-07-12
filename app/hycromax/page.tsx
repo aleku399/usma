@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
-import HycromaxDocumentViewer from "@/components/hycromax-document-viewer"
+import HycromaxDocumentViewer from "@/components/hycromax-document-viewer";
+import ProtectedRoute from "@/components/protected-route";
 
 export default function Page() {
   return (
-    <div>
+    <ProtectedRoute allowedClients={["hycromax"]}>
       <HycromaxDocumentViewer />
-    </div>
-  )
+    </ProtectedRoute>
+  );
 }

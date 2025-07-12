@@ -30,6 +30,8 @@ export default function LoginPage() {
     try {
       const client = await loginClient(loginId, password);
 
+      console.log("client in login page", client);
+
       if (client) {
         login(client.loginId);
         

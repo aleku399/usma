@@ -18,10 +18,13 @@ export async function authenticateClient(
   password: string
 ): Promise<Omit<Client, "password"> | null> {
   const clients = getClients();
+  console.log("loginId", loginId);
+  console.log("password", password);
 
   const client = clients.find(
     (c) => c.loginId === loginId && c.password === password
   );
+  console.log("cleientinDb", client);
 
   if (client) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

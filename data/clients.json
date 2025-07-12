@@ -1,36 +1,42 @@
 [
-    {
-      "id": "solly_beds",
-      "loginId": "sollybeds",
-      "password": "solly2024",
-      "name": "Solly Beds",
-      "route": "/documents",
-      "role": "client"
-    },
-    {
-      "id": "lanner",
-      "loginId": "lanmer",
-      "password": "lanmer2024",
-      "name": "Lanmer",
-      "route": "/lanner",
-      "role": "client"
-    },
-    {
-      "id": "ag_drone",
-      "loginId": "agdrone",
-      "password": "agdrone2024",
-      "name": "Ag Drone",
-      "route": "/ag-drone",
-      "role": "client"
-    },
-    {
-      "id": "brandbaseit",
-      "loginId": "brandbaseit",
-      "password": "brandbaseit2024",
-      "name": "Brand Base IT",
-      "route": "/brand-base",
-      "role": "client"
-    }
-  ]
-  
-  
+  {
+    "id": "solly_beds",
+    "loginId": "sollybeds",
+    "password": "solly2024",
+    "name": "Solly Beds",
+    "route": "/documents",
+    "role": "client"
+  },
+  {
+    "id": "lanner",
+    "loginId": "lanmer",
+    "password": "lanmer2024",
+    "name": "Lanmer",
+    "route": "/lanner",
+    "role": "client"
+  },
+  {
+    "id": "ag_drone",
+    "loginId": "agdrone",
+    "password": "agdrone2024",
+    "name": "Ag Drone",
+    "route": "/ag-drone",
+    "role": "client"
+  },
+  {
+    "id": "brandbaseit",
+    "loginId": "brandbaseit",
+    "password": "brandbaseit2024",
+    "name": "Brand Base IT",
+    "route": "/brand-base",
+    "role": "client"
+  },
+  {
+    "id": "hycromax",
+    "loginId": "hycromax",
+    "password": "uganda",
+    "name": "Hycromax Enterprises",
+    "route": "/hycromax",
+    "role": "client"
+  }
+]
