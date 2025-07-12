@@ -10,15 +10,14 @@ export const documents = [
     id: 2,
     title: "Passport",
     category: "registration",
-    description:
-      "The chairman`s passport",
+    description: "The chairman`s passport",
   },
   {
     id: 3,
-    title: "Annual Returns History",
-    category: "compliance",
+    title: "PACRA Certification",
+    category: "registration",
     description:
-      "PACRA annual returns filing history from 2011-2024 showing business nature as construction and retail operations",
+      "PACRA accounts certification stamp and verification page confirming company registration status",
   },
   {
     id: 4,
@@ -36,10 +35,10 @@ export const documents = [
   },
   {
     id: 6,
-    title: "PACRA Certification",
-    category: "registration",
+    title: "Annual Returns History",
+    category: "compliance",
     description:
-      "PACRA accounts certification stamp and verification page confirming company registration status",
+      "PACRA annual returns filing history from 2011-2024 showing business nature as construction and retail operations",
   },
   {
     id: 7,

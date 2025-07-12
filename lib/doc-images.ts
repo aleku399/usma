@@ -1,11 +1,11 @@
 export  const documentImages = [
     "/h2.png",
     "/hid.png",
-    "/h3.png",
+    "/h6.png",
     "/h4.png",
     "/h.png",
     "/h5.png",
-    "/h6.png",
+    "/h3.png",
     "/h7.png",
     "/h8.png",
     "/h9.png",

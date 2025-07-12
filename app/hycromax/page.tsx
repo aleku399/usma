@@ -5,7 +5,7 @@ import ProtectedRoute from "@/components/protected-route";
 
 export default function Page() {
   return (
-    <ProtectedRoute allowedClients={["max"]}>
+    <ProtectedRoute allowedClients={["hycromax"]}>
       <HycromaxDocumentViewer />
     </ProtectedRoute>
   );
