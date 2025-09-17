@@ -38,5 +38,13 @@
     "name": "Hycromax Enterprises",
     "route": "/hycromax",
     "role": "client"
+  },
+  {
+    "id": "keorapetse",
+    "loginId": "keorapetse",
+    "password": "uganda",
+    "name": "keorapetse INVESTMENTS (PTY) LTD",
+    "route": "/keorapetse",
+    "role": "client"
   }
 ]
